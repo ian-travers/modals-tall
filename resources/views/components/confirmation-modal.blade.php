@@ -1,4 +1,8 @@
-<div>
+<div
+    {{ $attributes }}
+    x-data="{ show: @entangle('showModal') }"
+    x-show="show"
+>
     <div class="fixed inset-0 bg-gray-900 opacity-60"></div>
 
     <div class="bg-gray-50 p-4 shadow-md max-w-md h-44 m-auto rounded-md fixed inset-0">
