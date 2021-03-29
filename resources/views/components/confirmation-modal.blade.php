@@ -1,4 +1,13 @@
-<div>
+@props(['hash'])
+
+<div
+    x-data="{ show: false}"
+    x-show="show"
+    @hashchange.window="
+        show = location.hash === '{{ $hash }}'
+    "
+    style="display: none"
+>
     <div class="fixed inset-0 bg-gray-900 opacity-60"></div>
 
     <div class="bg-gray-50 p-4 shadow-md max-w-md h-44 m-auto rounded-md fixed inset-0">

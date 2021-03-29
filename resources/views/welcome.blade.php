@@ -10,6 +10,9 @@
                     <li>Link 1</li>
                     <li>Link 2</li>
                     <li>Link 3</li>
+                    <li>
+                        <a href="#user-delete-modal" class="underline text-blue-600">Delete User</a>
+                    </li>
                 </ul>
             </aside>
 
@@ -40,7 +43,7 @@
     </div>
 
     {{-- modal --}}
-    <x-confirmation-modal>
+    <x-confirmation-modal hash="#user-delete-modal">
         <x-slot name="title">
             Are you sure?
         </x-slot>
@@ -48,9 +51,11 @@
         <p class="text-gray-900">Continuing will delete your account permanently</p>
 
         <x-slot name="footer">
-            <x-button class="bg-gray-400 hover:bg-gray-500 text-gray-50">
-                Cancel
-            </x-button>
+            <a href="#">
+                <x-button class="bg-gray-400 hover:bg-gray-500 text-gray-50">
+                    Cancel
+                </x-button>
+            </a>
             <x-button class="bg-blue-400 hover:bg-blue-500 text-gray-50">
                 Continue
             </x-button>
