@@ -10,14 +10,12 @@
                 If you proceed, your account will be deleted entirely
             </main>
             <footer class="space-x-1">
-                <button
-                    class="px-4 py-2 text-sm bg-gray-400 hover:bg-gray-500 text-gray-50 transition-all duration-200 rounded-md">
+                <x-button class="bg-gray-400 hover:bg-gray-500 text-gray-50">
                     Cancel
-                </button>
-                <button
-                    class="px-4 py-2 text-sm bg-blue-400 hover:bg-blue-500 text-gray-50 transition-all duration-200 rounded-md">
+                </x-button>
+                <x-button class="bg-blue-400 hover:bg-blue-500 text-gray-50">
                     Continue
-                </button>
+                </x-button>
             </footer>
         </div>
     </div>
