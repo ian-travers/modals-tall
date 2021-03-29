@@ -1,9 +1,10 @@
 <div
     {{ $attributes }}
-    x-data="{ show: @entangle('showModal') }"
+    x-data="{ show: @entangle($attributes->wire('model')) }"
     x-show="show"
+    @keydown.escape.window="show = false"
 >
-    <div class="fixed inset-0 bg-gray-900 opacity-60"></div>
+    <div @click="show = false" class="fixed inset-0 bg-gray-900 opacity-60"></div>
 
     <div class="bg-gray-50 p-4 shadow-md max-w-md h-44 m-auto rounded-md fixed inset-0">
         <div class="flex flex-col h-full justify-between">

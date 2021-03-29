@@ -8,7 +8,9 @@
         </x-button>
     </p>
 
-    <x-confirmation-modal>
+    <x-confirmation-modal
+        wire:model.defer="showModal"
+    >
         <x-slot name="title">
             Are you sure?
         </x-slot>
