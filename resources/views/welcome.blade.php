@@ -10,29 +10,30 @@
                     <li>Link 1</li>
                     <li>Link 2</li>
                     <li>Link 3</li>
-                    <li>
-                        <a href="#user-delete-modal" class="underline text-blue-600">Delete User</a>
-                    </li>
                 </ul>
             </aside>
 
             <main class="col-span-9">
                 <p class="mb-4">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur cupiditate deserunt esse
-                    et eveniet fuga inventore iusto perspiciatis ratione, vel veritatis voluptas! Laborum neque numquam
-                    sint sit vero voluptatem.
+                    Would you like to delete your account?
                 </p>
-                <p class="mb-4">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum non, numquam. Accusantium atque aut
-                    autem, delectus doloremque est et excepturi inventore labore modi nihil, nisi obcaecati officiis
-                    possimus reiciendis rem repellat tempora voluptate?
-                </p>
-                <p class="mb-4">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum cumque delectus hic itaque nulla
-                    quaerat reprehenderit saepe voluptate. Aliquid beatae doloremque inventore iusto laboriosam omnis
-                    praesentium reiciendis! Ab consectetur deleniti dignissimos eius exercitationem explicabo illo iure
-                    magni necessitatibus odit perspiciatis quas sapiente, similique vel.
-                </p>
+
+                <form
+                    id="delete-user-form"
+                    action="/"
+                    method="post"
+                    x-data
+                    @submit.prevent="
+                        location.hash='#user-delete-modal'
+                    "
+                >
+                    @csrf
+                    <p class="mb-4">
+                        <x-button class="bg-blue-400 hover:bg-blue-500 text-gray-50">
+                            Yes, Delete
+                        </x-button>
+                    </p>
+                </form>
             </main>
         </div>
 
@@ -56,7 +57,10 @@
                     Cancel
                 </x-button>
             </a>
-            <x-button class="bg-blue-400 hover:bg-blue-500 text-gray-50">
+            <x-button
+                class="bg-blue-400 hover:bg-blue-500 text-gray-50"
+                @click="document.querySelector('#delete-user-form').submit()"
+            >
                 Continue
             </x-button>
         </x-slot>
