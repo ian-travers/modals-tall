@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ mix('css/app.css', 'build') }}">
     @livewireStyles
 </head>
-<body class="antialiased">
+<body class="antialiased bg-gray-200">
 
 {{ $slot }}
 
